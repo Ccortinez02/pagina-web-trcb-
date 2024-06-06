@@ -6,7 +6,9 @@
 .advises{
     height: 25px;
     width: 100%;
-    background-color: rgb(221, 28, 28);
+    background-color: rgb(253, 55, 55);
+    text-align: center;
+    padding-top: 3px;
 }
 
 header{
@@ -15,8 +17,22 @@ header{
     width: 100%;
     display: flex;
     align-items:center;
-    align-content:space-between;
+    justify-content: space-around;
     a{
         text-decoration: none;
     }
+    img{
+    }
+    .blank-space-header{
+        background-color: aqua;
+    }
+    .buttons-header{
+        background-color: aqua;
+        border-radius: 4px;
+        padding: 6px;
+    }
+    .buttons-header:hover{
+        background-color: blue;
+    }
 }
+
