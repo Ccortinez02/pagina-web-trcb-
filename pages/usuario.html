@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/script.js">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>TheRealCapBrand.cl</title>
+</head>
+<body>
+    <!-- Barra de Navegación -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><img src="/img/TheRealCap (1) img.png" alt="Logo"
+                        style="height: 40px;"></a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="#">Catálogo</a></li>
+                <li><a href="#" id="contacto-link">Contacto</a></li> <!-- Asegúrate de que el id coincida aquí -->
+                <li><a href="#sobre-nosotros">Nosotros</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#" id="my_profile"><span class="glyphicon glyphicon-user"></span> Mi Usuario</a>
+                </li> <!-- Asegúrate de que el id coincida aquí -->
+            </ul>
+        </div>
+    </nav>
+    <!-- Carrusel de Imágenes -->
+    <div id="bannerCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#bannerCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#bannerCarousel" data-slide-to="1"></li>
+            <li data-target="#bannerCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="https://via.placeholder.com/1920x500.png?text=Gorros+de+Moda+1" alt="Gorros de Moda 1">
+            </div>
+            <div class="item">
+                <img src="https://via.placeholder.com/1920x500.png?text=Gorros+de+Moda+2" alt="Gorros de Moda 2">
+            </div>
+            <div class="item">
+                <img src="https://via.placeholder.com/1920x500.png?text=Gorros+de+Moda+3" alt="Gorros de Moda 3">
+            </div>
+        </div>
+        <a class="left carousel-control" href="#bannerCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="right carousel-control" href="#bannerCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Siguiente</span>
+        </a>
+    </div>
+    <!-- Sección de Productos -->
+    <div class="container">
+        <h2 class="text-center">Nuestros Productos</h2>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card">
+                    <img class="card-img-top" src="/img/Imagen de WhatsApp 2024-01-07 a las 21.57.59_831aa0cf.jpg"
+                        alt="Gorro 1">
+                    <div class="card-body">
+                        <h4 class="card-title">Gorro Deportivo</h4>
+                        <p class="card-text">Ideal para actividades al aire libre.</p>
+                        <p class="card-price">Precio: $19.990</p> <!-- precio -->
+                        <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <img class="card-img-top" src="/img/Imagen de WhatsApp 2024-01-07 a las 21.58.00_c4af29e8.jpg"
+                        alt="Gorro 2">
+                    <div class="card-body">
+                        <h4 class="card-title">Gorro Casual</h4>
+                        <p class="card-text">Perfecto para el uso diario.</p>
+                        <p class="card-price">Precio: $19.990</p> <!-- precio -->
+                        <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <img class="card-img-top" src="/img/Imagen de WhatsApp 2024-01-07 a las 21.58.01_494d9180.jpg"
+                        alt="Gorro 3">
+                    <div class="card-body">
+                        <h4 class="card-title">Gorro de Invierno</h4>
+                        <p class="card-text">Mantén tu cabeza abrigada en invierno.</p>
+                        <p class="card-price">Precio: $19.990</p> <!-- precio -->
+                        <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Sección "Sobre Nosotros" -->
+    <div class="container" id="sobre-nosotros">
+        <h2 class="text-center">Quiénes somos</h2>
+        <p>Somos una marca comprometida con la calidad, el estilo y la elegancia. Nos esforzamos por ofrecer productos
+            exclusivos que reflejen la esencia de la sofisticación y la moda contemporánea. Desde prendas de vestir
+            hasta accesorios, nuestra colección está diseñada para aquellos que valoran la excelencia y la distinción en
+            cada detalle.</p>
+        <h3>Nuestro objetivo</h3>
+        <p>En nuestra búsqueda de la excelencia, nuestro objetivo es brindar una experiencia única a nuestros clientes.
+            Queremos ser reconocidos no solo por la calidad de nuestros productos, sino también por el nivel de atención
+            al cliente que ofrecemos. Nos esforzamos por superar las expectativas en cada interacción, creando así
+            relaciones duraderas y significativas con nuestra comunidad.</p>
+        <p>Como marca, aspiramos a ser un símbolo de estilo y sofisticación, inspirando confianza y empoderando a
+            nuestros clientes para expresar su individualidad a través de la moda. Nuestra misión es ser una fuente de
+            inspiración para aquellos que buscan destacarse en un mundo lleno de tendencias cambiantes, ofreciendo
+            productos que perduren en el tiempo y se conviertan en piezas clave en el guardarropa de cada persona.</p>
+    </div>
+    <!-- Evaluaciones de Clientes -->
+    <div class="container">
+        <h2 class="text-center">Lo que dicen nuestros clientes</h2>
+        <div class="card-columns">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Juan Pérez</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">Santiago</h6>
+                    <p class="card-text">¡Excelente calidad y servicio! Recomendado al 100%.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">María Gómez</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">Valparaíso</h6>
+                    <p class="card-text">Me encantó el diseño de los gorros. Muy cómodos.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Pedro Sánchez</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">Concepción</h6>
+                    <p class="card-text">Gran variedad de productos y a buen precio.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de Página -->
+    <footer class="footer-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-3">
+                    <h3>Contacto</h3>
+                    <p>Email: contacto@therealcapbrand.cl</p>
+                    <p>Teléfono: +56 9 1234 5678</p>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <h3>Ubicación</h3>
+                    <p>Avenida Siempre Viva 123, Santiago, Chile</p>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <h3>Síguenos</h3>
+                    <a href="#"><i class="fa fa-facebook"></i> Facebook</a><br>
+                    <a href="#"><i class="fa fa-twitter"></i> Twitter</a><br>
+                    <a href="#"><i class="fa fa-instagram"></i> Instagram</a>
+                </div>
+            </div>
+            <p class="rights">© 2024 TheRealCapBrand. Todos los derechos reservados. <br>
+                <a href="#">Términos y Condiciones</a> | <a href="#">Nuestras Políticas</a>
+            </p>
+        </div>
+    </footer>
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span id="cerrar-login-modal" class="close">&times;</span>
+            <!-- Contenido del cuadro modal de inicio de sesión -->
+            <h2>Iniciar Sesión</h2>
+            <!-- Aquí puedes agregar tu formulario de inicio de sesión -->
+        </div>
+    </div>
+    <div id="contacto-modal" class="modal">
+        <div class="modal-content">
+            <span id="cerrar-contacto-modal" class="close">&times;</span>
+            <!-- Contenido del cuadro modal de contacto -->
+            <h2>Contacto</h2>
+            <!-- Aquí puedes agregar información de contacto o un formulario de contacto -->
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    <div id="blur-background" class="blur"></div>
+</body>
+</html>
