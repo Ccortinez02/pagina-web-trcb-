@@ -1,162 +1,134 @@
 /* Estilos Generales */
-
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
 }
-.carousel-item img {
+
+.carousel-item img, .carousel-inner .item img {
+    width: 100%;
     height: 500px;
     object-fit: cover;
 }
 
 .card-columns {
     column-count: 3;
+    column-gap: 30px;
 }
 
-.card {
-    margin-bottom: 30px;
+.card, .footer-dark, .navbar, .btn-primary, .card, #sobre-nosotros, .card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-.footer-dark {
-    background: #343a40;
-    color: white;
+.footer-dark, .navbar {
+    background-color: #343a40;
+}
+
+.footer-dark, .navbar-nav li a, .navbar-brand, .navbar-brand img, .footer-dark a, .btn-primary, .btn-primary:hover, .footer-dark a:hover, .rights {
+    color: #ffffff;
+}
+
+.footer-dark, .rights {
     padding: 20px 0;
-}
-
-.footer-dark a {
-    color: #f8f9fa;
-    text-decoration: none;
-}
-
-.footer-dark a:hover {
-    color: #adb5bd;
 }
 
 .footer-dark .rights {
     text-align: center;
     margin-top: 10px;
 }
-/* Estilos del Encabezado */
-.navbar {
-    background-color: #343a40;
-    /* Color de fondo de la barra de navegación */
-}
 
-.navbar-brand {
-    color: #ffffff;
-    /* Color del texto del logo */
-}
-
-.navbar-brand img {
-    height: 40px;
-    /* Altura del logo */
-}
-
-.navbar-nav li a {
-    color: #ffffff;
-    /* Color del texto de los enlaces en la barra de navegación */
-}
-
-.navbar-nav li a:hover {
+.footer-dark a:hover, .navbar-nav li a:hover, .btn-primary:hover {
     color: #adb5bd;
-    /* Color del texto de los enlaces al pasar el ratón */
 }
 
-/* Estilos del Banner */
-.carousel-inner .item img {
-    width: 100%;
-    /* Ajustar imagen al ancho del contenedor */
+.footer-dark a, .footer-dark a:hover {
+    text-decoration: none;
 }
 
-.carousel-control {
-    font-size: 2em;
-    /* Tamaño de los iconos de control */
-}
-
-/* Estilos de la Sección de Productos */
 .card {
-    background-color: #ffffff;
-    /* Color de fondo de las tarjetas */
-    border-radius: 15px;
-    /* Borde redondeado */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Sombra suave */
-    transition: transform 0.3s ease;
-    /* Transición suave al pasar el ratón */
+    margin-bottom: 30px;
+    padding: 20px;
+    min-height: 450px;
+    max-height: 500px;
+    overflow: hidden;
+    position: relative;
 }
 
 .card:hover {
     transform: translateY(-10px);
-    /* Efecto de levantamiento al pasar el ratón */
 }
 
 .card-title {
     font-weight: bold;
-    /* Texto en negrita */
 }
 
-.card-text {
+.card-text, .card-subtitle {
     color: #6c757d;
-    /* Color del texto secundario */
 }
 
-.btn-primary {
-    background-color: #343a40;
-    /* Color de fondo del botón primario */
-    border-color: #343a40;
-    /* Color del borde del botón primario */
-    transition: background-color 0.3s ease;
-    /* Transición suave */
+.card-price {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    color: #ff5733;
 }
 
-.btn-primary:hover {
-    background-color: #212529;
-    /* Color de fondo del botón primario al pasar el ratón */
+.card .btn-primary {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Estilos del Encabezado */
+.navbar {
+    min-height: 90px;
+    border: none;
+}
+
+.navbar-brand, .navbar .navbar-brand {
+    padding: 15px 15px;
+    height: auto;
+}
+
+.navbar-brand img, .navbar .navbar-brand img {
+    height: 60px;
+}
+
+.navbar-nav li a {
+    padding-top: 35px!important;
+    padding-bottom: 20px;
+    font-size: 16px;
+}
+
+.navbar .navbar-inverse .navbar-fixed-top{
+    min-height: 90px;
+}
+
+/* Estilos del Banner */
+.carousel-control {
+    font-size: 2em;
 }
 
 /* Estilos de la Sección "Sobre Nosotros" */
 #sobre-nosotros {
-    background-color: #ffffff;
-    /* Color de fondo */
     padding: 50px 0;
-    /* Espacio alrededor del contenido */
     text-align: center;
-    /* Centrar texto */
-}
-
-/* Estilos de las Evaluaciones de Clientes */
-.card-columns {
-    column-gap: 30px;
-    /* Espacio entre columnas */
-}
-
-.card-subtitle {
-    color: #6c757d;
-    /* Color del texto secundario */
 }
 
 /* Estilos del Pie de Página */
-.footer-dark {
-    background-color: #343a40;
-    /* Color de fondo */
-    color: #ffffff;
-    /* Color del texto */
-}
-
-.footer-dark a {
-    color: #ffffff;
-    /* Color de los enlaces */
-}
-
-.footer-dark a:hover {
+.footer-dark .rights {
     color: #adb5bd;
-    /* Color de los enlaces al pasar el ratón */
-}
-
-/* Estilos del Texto de los Derechos de Autor */
-.rights {
-    color: #adb5bd;
-    /* Color del texto */
 }
 
 /* Estilos para el fondo borroso */
@@ -168,30 +140,46 @@ body {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    /* Fondo oscuro semi-transparente */
     backdrop-filter: blur(5px);
-    /* Aplicar desenfoque al fondo */
     z-index: 999;
 }
 
 /* Estilos para el cuadro modal */
 .modal {
-    display: none;
+    display: none; /* Oculto por defecto */
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* Centrar vertical y horizontalmente */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.modal-content {
     background-color: white;
     padding: 20px;
-    z-index: 1000;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    /* Sombra para efecto de elevación */
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+}
+#register-form div {
+    margin-bottom: 15px;
 }
 
+#register-form label {
+    display: block;
+    margin-bottom: 5px;
+}
 
-
+#register-form input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 /* Estilos para el botón de cerrar */
 .close {
     position: absolute;
@@ -200,40 +188,51 @@ body {
     cursor: pointer;
     font-size: 20px;
 }
-/* Estilos de las imágenes de las tarjetas */
-.card-img-top {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-/* Estilos de las tarjetas de productos */
-.card {
-    background-color: #ffffff; /* Color de fondo de las tarjetas */
-    border-radius: 15px; /* Borde redondeado */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave */
-    transition: transform 0.3s ease; /* Transición suave al pasar el ratón */
-    padding: 20px; /* Padding interno */
-    min-height: 450px; /* Altura mínima de la tarjeta */
-    max-height: 500px; /* Altura máxima de la tarjeta */
-    overflow: hidden; /* Ocultar contenido que sobrepase la altura máxima */
-    position: relative; /* Añadir posición relativa para posicionar el botón */
+
+/* Estilos para el carrito de compras */
+.cart-icon {
+    font-size: 24px;
+    cursor: pointer;
 }
 
-
-/* Estilos del botón "Comprar" */
-.card .btn-primary {
-    position: absolute;
-    bottom: 20px; /* Colocar el botón 20px del borde inferior */
-    left: 50%; /* Centrar horizontalmente */
-    transform: translateX(-50%); /* Centrar horizontalmente */
+.cart-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    background-color: #adb5bd;
 }
 
-/* Estilos del precio */
-.card-price {
-    position: absolute;
-    bottom: 50px; /* Ajustar la posición según sea necesario */
-    left: 50%; /* Centrar horizontalmente */
-    transform: translateX(-50%); /* Centrar horizontalmente */
-    font-size: 18px;
-    color: #ff5733; /* Color llamativo */
+.cart-modal h2 {
+    margin-top: 0;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.cart-item p {
+    margin: 0;
+}
+
+.cart-item .cart-item-actions {
+    display: flex;
+    align-items: center;
+}
+
+.cart-item .cart-item-actions button {
+    margin-left: 10px;
+}
+
+.close-cart {
+    cursor: pointer;
+    color: red;
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <title>Iniciar Sesión</title>
     <style>
+        /* Estilos principales */
         body {
             font-family: Arial, sans-serif;
             background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
@@ -26,7 +28,8 @@
             width: 100%;
             max-width: 400px;
             text-align: center;
-            margin-top: 80px; /* Ajuste de margen para compensar la altura del nav */
+            margin-top: 80px;
+            /* Ajuste de margen para compensar la altura del nav */
         }
 
         .login-container h2 {
@@ -79,9 +82,12 @@
         }
 
         .navbar {
-            min-height: 70px; /* Aumenta la altura del nav */
-            background-color: #222; /* Fondo oscuro para contraste */
-            border: none; /* Elimina borde predeterminado */
+            min-height: 70px;
+            /* Aumenta la altura del nav */
+            background-color: #222;
+            /* Fondo oscuro para contraste */
+            border: none;
+            /* Elimina borde predeterminado */
         }
 
         .navbar .navbar-brand {
@@ -90,22 +96,63 @@
         }
 
         .navbar .navbar-brand img {
-            height: 50px; /* Aumenta el tamaño del logo */
+            height: 60px;
+            /* Aumenta el tamaño del logo */
         }
 
-        .navbar-nav > li > a {
+        .navbar-nav>li>a {
             padding-top: 28px;
             padding-bottom: 20px;
             font-size: 16px;
         }
+
+        .modal {
+            display: none;
+            /* Oculto por defecto */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Fondo semi-transparente */
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
+
 <body>
     <!-- Barra de Navegación -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#"><img src="/img/TheRealCap (1) img.png" alt="Logo" style="height: 50px;"></a>
+                <a class="navbar-brand" href="#"><img src="/img/TheRealCap (1) img.png" alt="Logo"
+                        style="height: 50px;"></a>
             </div>
             <ul class="nav navbar-nav">
                 <li><a href="/pages/catalogo.html">Catálogo</a></li>
@@ -118,12 +165,25 @@
     <div class="login-container">
         <h2>Iniciar Sesión</h2>
         <form id="login-form">
-            <input id="username" type="text" placeholder="Usuario o Correo Electrónico" required>
-            <input id="password" type="password" placeholder="Contraseña" required>
+            <input id="login-username" type="text" placeholder="Usuario o Correo Electrónico" required>
+            <input id="login-password" type="password" placeholder="Contraseña" required>
             <button type="submit">Ingresar</button>
-            <a href="#">Registrarse</a>
+            <a href="#" id="show-register-modal">Registrarse</a>
             <a href="#">¿Olvidaste tu contraseña?</a>
         </form>
+    </div>
+
+    <!-- Modal de Registro -->
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-register-modal">&times;</span>
+            <h2>Registro</h2>
+            <form id="register-form">
+                <input id="register-username" type="text" placeholder="Usuario" required>
+                <input id="register-password" type="password" placeholder="Contraseña" required>
+                <button type="submit">Registrarse</button>
+            </form>
+        </div>
     </div>
 
     <!-- Scripts de Bootstrap -->
@@ -132,32 +192,64 @@
 
     <!-- Script de JavaScript -->
     <script>
-        document.getElementById('login-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Evitar la acción por defecto del formulario
+        // Mostrar el modal de registro
+        document.getElementById('show-register-modal').addEventListener('click', function (event) {
+            event.preventDefault();
+            document.getElementById('register-modal').style.display = 'block';
+        });
 
-            // Obtener los valores de los campos de texto
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
+        // Cerrar el modal de registro
+        document.getElementById('close-register-modal').addEventListener('click', function () {
+            document.getElementById('register-modal').style.display = 'none';
+        });
 
-            // Lista de usuarios y contraseñas de prueba
-            const users = [
-                { username: 'user1', password: 'password1' },
-                { username: 'user2', password: 'password2' },
-                { username: 'user3', password: 'password3' },
-                { username: 'admin', password: 'admin' }
-            ];
+        // Registrar nuevo usuario
+        document.getElementById('register-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const username = document.getElementById('register-username').value;
+            const password = document.getElementById('register-password').value;
+
+            // Verificar si el usuario ya existe
+            if (localStorage.getItem(username)) {
+                alert('El usuario ya existe. Por favor, elige otro nombre de usuario.');
+                return;
+            }
+
+            // Guardar el usuario y la contraseña en localStorage
+            localStorage.setItem(username, password);
+            alert('Usuario registrado con éxito.');
+
+            // Limpiar el formulario de registro
+            document.getElementById('register-username').value = '';
+            document.getElementById('register-password').value = '';
+
+            // Cerrar el modal de registro
+            document.getElementById('register-modal').style.display = 'none';
+        });
+
+        // Manejo del formulario de inicio de sesión
+        document.getElementById('login-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const username = document.getElementById('login-username').value;
+            const password = document.getElementById('login-password').value;
 
             // Verificar si las credenciales son válidas
-            const user = users.find(user => user.username === username && user.password === password);
-
-            if (user) {
-                // Si las credenciales son válidas, redirigir al usuario a la página de inicio
-                window.location.href = '/pages/usuario.html';
+        if (localStorage.getItem(username) === password) {
+            if (username === 'admin') {
+                // Redirigir al usuario admin a la página de administración
+                window.location.href = '/pages/admin.html';
             } else {
-                // Si las credenciales no son válidas, mostrar un mensaje de error
-                alert('Usuario o contraseña incorrectos');
+                // Redirigir a la página de usuario normal
+                window.location.href = '/pages/usuario.html';
             }
-        });
+        } else {
+            // Mostrar mensaje de error si las credenciales son incorrectas
+            alert('Usuario o contraseña incorrectos.');
+        }
+    });
     </script>
 </body>
+
 </html>
