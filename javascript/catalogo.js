@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     // Arreglo para almacenar los productos en el carrito
     let cart = [];
 
@@ -65,7 +65,7 @@ $(document).ready(function() {
     }
 
     // Función para manejar clics en el botón Comprar en los productos
-    $('.add-to-cart').click(function() {
+    $('.add-to-cart').click(function () {
         let id = $(this).data('id');
         let name = $(this).data('name');
         let price = $(this).data('price');
@@ -73,12 +73,12 @@ $(document).ready(function() {
     });
 
     // Función para manejar clics en el ícono del carrito en la barra de navegación
-    $('#cart').click(function() {
+    $('#cart').click(function () {
         updateCartModal();
     });
 
     // Función para manejar clics en los botones dentro del modal del carrito
-    $('#cart-items').on('click', '.btn', function() {
+    $('#cart-items').on('click', '.btn', function () {
         let id = $(this).data('id');
         let action = $(this).data('action');
 
@@ -112,13 +112,13 @@ $(document).ready(function() {
     });
 
     // Función para manejar clics en el botón "Proceder al Pago"
-    $('#checkout').click(function() {
+    $('#checkout').click(function () {
         // Aquí puedes agregar la lógica para proceder al pago
         alert('Proceder al pago: Total $' + $('#cart-total').text());
     });
 
     // Función para manejar clics en el botón "Cerrar" del modal del carrito
-    $('#close-cart').click(function() {
+    $('#close-cart').click(function () {
         $('#cart-modal').hide();
     });
 
@@ -140,7 +140,7 @@ $(document).ready(function() {
     }
 
     // Guardar el carrito cada vez que se actualice
-    $(window).on('beforeunload', function() {
+    $(window).on('beforeunload', function () {
         saveCart();
     });
 });
