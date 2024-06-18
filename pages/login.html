@@ -169,21 +169,42 @@
         <form id="login-form">
             <input id="login-username" type="text" placeholder="Usuario o Correo Electrónico" required>
             <input id="login-password" type="password" placeholder="Contraseña" required>
-            <button type="submit">Ingresar</button>
+            <button type="submit" style="width: 320px;">Ingresar</button>
             <a href="#" id="show-register-modal">Registrarse</a>
-            <a href="#">¿Olvidaste tu contraseña?</a>
+            <a href="#" id="show-password-recovery-modal">¿Olvidaste tu contraseña?</a>
         </form>
     </div>
 
     <!-- Modal de Registro -->
     <div id="register-modal" class="modal">
-        <div class="modal-content" style="height: 220px;">
+        <div class="modal-content" style="height: 430px;">
             <span class="close" id="close-register-modal">&times;</span>
             <h2>Registro</h2>
             <form id="register-form" style="height: 220px;">
                 <input id="register-username" type="text" placeholder="Usuario" required>
+                <br> <br>
                 <input id="register-password" type="password" placeholder="Contraseña" required>
+                <br> <br>
+                <input id="register-mail" type="email" placeholder="sucorreo@gmail.com" required>
+                <br> <br>
+                <input id="register-phone" type="text" placeholder="+569 1234 5678" required>
+                <br> <br>
+                <input id="register-birth" type="date" placeholder="dia/mes/año" required>
+                <br> <br>
                 <button type="submit">Registrarse</button>
+            </form>
+        </div>
+    </div>
+    <!-- Modal de Recuperacion de contraseña -->
+    <div id="password-recovery-modal" class="modal">
+        <div class="modal-content" style="height: 220;">
+            <span class="close" id="close-password-recovery-modal">&times;</span>
+            <h2>Verificacion de dos pasos</h2>
+            <p>Ingrese su correo registrado para que le enviemos un correo de Recuperacion de cuenta</p>
+            <form id="password-recovery-form" style="height: 220px;">
+                <input id="recover-email-user" type="email" size="40px" placeholder="sucorreo@gmail.com">
+                <br> <br>
+                <button type="submit">Enviar Correo</button>
             </form>
         </div>
     </div>

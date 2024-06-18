@@ -18,8 +18,20 @@ function populateUserTable() {
         row.appendChild(usernameCell);
 
         let passwordCell = document.createElement('td');
-        passwordCell.textContent = '********'; // Hide the password for security
+        passwordCell.textContent = usuario.password; // Hide the password for security
         row.appendChild(passwordCell);
+
+        let mail = document.createElement('td');
+        mail.textContent = usuario.mail; // Hide the password for security
+        row.appendChild(mail);
+
+        let phone_number = document.createElement('td');
+        phone_number.textContent = usuario.phone_number; // Hide the password for security
+        row.appendChild(phone_number);
+
+        let birth_date = document.createElement('td');
+        birth_date.textContent = usuario.birth_date; // Hide the password for security
+        row.appendChild(birth_date);
 
         let actionsCell = document.createElement('td');
         actionsCell.innerHTML = `
@@ -35,7 +47,7 @@ function populateUserTable() {
 }
 
 // Function to register a new user
-function registerNewUser(username, password) {
+function registerNewUser(username, password, mail, phone_number, birth_date) {
     let lista_usuarios = fetchRegisteredUsers();
 
     if (lista_usuarios.some(user => user.username === username)) {
@@ -45,7 +57,7 @@ function registerNewUser(username, password) {
 
     let fechaRegistro = new Date().toLocaleDateString('es-ES');
 
-    lista_usuarios.push({ username, password, fechaRegistro, historialCompras: [] });
+    lista_usuarios.push({ username, password, mail, phone_number, birth_date, fechaRegistro, historialCompras: [] });
 
     localStorage.setItem('usuarios', JSON.stringify(lista_usuarios));
 
@@ -53,6 +65,9 @@ function registerNewUser(username, password) {
 
     document.getElementById('register-username').value = '';
     document.getElementById('register-password').value = '';
+    document.getElementById('email-user').value = '';
+    document.getElementById('phone-number').value = '';
+    document.getElementById('age-user').value = '';
     populateUserTable(); // Update table
 
     // Close the registration modal after successful registration
@@ -74,7 +89,10 @@ document.getElementById('register-form').addEventListener('submit', (event) => {
     event.preventDefault();
     let username = document.getElementById('register-username').value.trim();
     let password = document.getElementById('register-password').value.trim();
-    registerNewUser(username, password);
+    let mail = document.getElementById('email-user').value.trim();
+    let phone_number = document.getElementById('phone-number').value.trim();
+    let birth_date = document.getElementById('age-user').value.trim();
+    registerNewUser(username, password, mail,phone_number,birth_date);
 });
 
 // Function to delete a user

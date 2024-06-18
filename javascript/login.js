@@ -1,5 +1,5 @@
 // Function to register a new user
-function registerNewUser(username, password) {
+function registerNewUser(username, password, mail, phone_number, birth_date) {
     // Get the list of users from localStorage
     let lista_usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
 
@@ -10,7 +10,7 @@ function registerNewUser(username, password) {
     }
 
     // Add the new user to the list
-    lista_usuarios.push({ username, password });
+    lista_usuarios.push({ username, password, mail, phone_number, birth_date });
 
     // Save the updated list of users to localStorage
     localStorage.setItem('usuarios', JSON.stringify(lista_usuarios));
@@ -20,6 +20,9 @@ function registerNewUser(username, password) {
     // Clear the registration form fields
     document.getElementById('register-username').value = '';
     document.getElementById('register-password').value = '';
+    document.getElementById('register-mail').value = '';
+    document.getElementById('register-phone').value = '';
+    document.getElementById('register-birth').value = '';
 
     // Close the registration modal
     document.getElementById('register-modal').style.display = 'none';
@@ -62,8 +65,11 @@ document.getElementById('register-form').addEventListener('submit', function (ev
 
     const username = document.getElementById('register-username').value.trim();
     const password = document.getElementById('register-password').value.trim();
+    const mail = document.getElementById('register-mail').value.trim();
+    const phone_number = document.getElementById('register-phone').value.trim();
+    const birth_date = document.getElementById('register-birth').value.trim();
 
-    registerNewUser(username, password);
+    registerNewUser(username, password, mail, phone_number, birth_date);
 });
 
 // Show registration modal
@@ -76,3 +82,11 @@ document.getElementById('close-register-modal').addEventListener('click', functi
     document.getElementById('register-modal').style.display = 'none';
 });
 
+// funcion para recuperacion de contraseña
+document.getElementById('show-password-recovery-modal').addEventListener('click', function (){
+    document.getElementById('password-recovery-modal').style.display ='block';
+})
+
+document.getElementById('close-password-recovery-modal').addEventListener('click', function (){
+    document.getElementById('password-recovery-modal').style.display ='none';
+})
