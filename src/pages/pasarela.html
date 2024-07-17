@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Pasarela de Compras</title>
+    <style>
+        /* Estilos personalizados para la pasarela */
+        .cart-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .cart-item {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .checkout-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #2575fc;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .checkout-button:hover {
+            background-color: #1b5cb8;
+        }
+
+        footer {
+            bottom: 0 !important;
+            position: relative !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Barra de Navegación -->
+    <header>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#"><img src="/public/img/TheRealCap (1) img.png" alt="Logo" class="logo"></a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="/public/index.html">Inicio</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/public/index.html"><span class="glyphicon glyphicon-log-in"></span>
+                            Cerrar Sesión</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contenido Principal - Resumen del Carrito -->
+    <main>
+        <div class="container">
+            <div class="cart-container">
+                <h2>Resumen de Compra</h2>
+                <div id="cart-items">
+                    <!-- Aquí se generará dinámicamente la lista de items del carrito -->
+                </div>
+                <div id="cart-total">
+                    <h3>Total: <span id="total-amount"></span></h3>
+                </div>
+                <button id="checkout-button" class="checkout-button">Proceder al Pago</button>
+            </div>
+        </div>
+    </main>
+    <center>
+        <!-- Modal de Voucher o Boleta Electrónica -->
+        <div id="voucher-modal" class="modal">
+            <div class="modal-content" style="top: 30%;">
+                <span id="cerrar-voucher-modal" class="close">&times;</span>
+                <h2>Voucher de Compra</h2>
+                <p>Gracias por tu compra. Aquí está tu voucher:</p>
+                <div id="voucher-details">
+                    <!-- Aquí se mostrarán los detalles del voucher generado -->
+                </div>
+            </div>
+        </div>
+    </center>
+    <!-- Pie de Página -->
+    <footer class="footer-dark">
+        <div class="container">
+            <div class="row">
+            </div>
+            <p class="rights">© 2024 TheRealCapBrand. Todos los derechos reservados. <br>
+                <a href="#">Términos y Condiciones</a> | <a href="#">Nuestras Políticas</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts de Bootstrap y jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- Script Personalizado -->
+    <script src="/src/script.js"></script>
+    <script src="/src/pasarela.js"></script>
+</body>
+
+</html>
