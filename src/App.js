@@ -1,20 +1,23 @@
-
-import './styles.css'
-import { Carrusel} from './Screens/Carrusel';
-import { Productos} from './Screens/Productos';
-import Encabezado from './Screens/Encabezado';
-import SobreNosotros from './Screens/SobreNosotros'
+import logo from "./logo.svg";
+import "./App.js";
+import Home from "./Screens/Home";
+import Carrusel from "./Screens/Carrusel";
+import Clients from "./Screens/Clients";
+import Contact from "./Screens/Contact";
+import Products from "./Screens/Products";
+import Navbar from './Components/Navbar.js';
 
 
 
 function App() {
     return (
-
         <div className="App">
-            <Encabezado></Encabezado>
-            <Carrusel></Carrusel>
-            <Productos></Productos>
-            <SobreNosotros></SobreNosotros>
+            <Navbar/>
+            <Home/>
+            <Carrusel/>
+            <Products/>
+            <Clients/>
+            <Contact/>
         </div>
     )
 }
