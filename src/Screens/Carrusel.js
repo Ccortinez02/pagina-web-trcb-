@@ -1,6 +1,6 @@
 import React from "react";
 
-export const PrimerComponente = () => {
+export const Carrusel = () => {
     return (
         <section id="banner">
             <div id="bannerCarousel" class="carousel slide" data-ride="carousel">
@@ -29,3 +29,5 @@ export const PrimerComponente = () => {
         </section>
         );
 }
+
+export default Carrusel

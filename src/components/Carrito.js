@@ -1,6 +1,6 @@
 import React from "react";
 
-export const TercerComponente = () => {
+export const Carrito = () => {
     return (
         <div class="cart-modal" id="cart-modal">
             <h2>Carrito de Compras</h2>

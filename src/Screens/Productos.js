@@ -1,6 +1,6 @@
 import React from "react";
 
-export const SegundoComponente = () => {
+export const Productos = () => {
     return (
         <section id="productos" class="container">
             <h2 class="text-center">Nuestros Productos</h2>
