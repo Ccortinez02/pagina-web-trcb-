@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-scroll';
 import styles from "./Navbar.module.css";
+import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 
 const Navbar = () => {
-    const [NavbarOpen, setNavbarOpen] = useState(false);
+    const [NavbarOpen, SetNavbarOpen] = useState(false);
     const Links = [
         { id: 1, link: 'Inicio' },
         { id: 2, link: 'SobreNosotros' },
@@ -11,8 +12,10 @@ const Navbar = () => {
         { id: 4, link: 'Contacto' },
     ];
     return (
-        <div className={styles.Navbar}>
+        <div className={NavbarOpen === true ? styles.Navbar : styles.NavbarOpen}>
             <p>The Real Cap Store</p>
+            <AiOutlineMenu onClick={() => SetNavbarOpen(!NavbarOpen)} size={25}/>
+            {!NavbarOpen && <AiOutlineClose/>} 
             {
                 NavbarOpen &&
                 <ul>
