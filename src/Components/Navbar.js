@@ -8,23 +8,34 @@ const Navbar = () => {
     const Links = [
         { id: 1, link: 'Inicio' },
         { id: 2, link: 'SobreNosotros' },
-        { id: 3, link: 'NuestrosProdcutos' },
+        { id: 3, link: 'NuestrosProductos' },
         { id: 4, link: 'Contacto' },
     ];
     return (
         <div className={NavbarOpen === true ? styles.Navbar : styles.NavbarOpen}>
-            <p>The Real Cap Store</p>
-            <AiOutlineMenu onClick={() => SetNavbarOpen(!NavbarOpen)} size={25}/>
-            {!NavbarOpen && <AiOutlineClose/>} 
+            {!NavbarOpen && <p className={styles.logo}>The Real Cap Store</p>}
+            {!NavbarOpen ? (
+                <AiOutlineMenu onClick={() => SetNavbarOpen(!NavbarOpen)} color='#4a4564' size={25} />
+            ) : (
+                <AiOutlineClose onClick={() => SetNavbarOpen(!NavbarOpen)} color='#f1f1f1' size={25} />
+            )}
             {
-                NavbarOpen &&
-                <ul>
-                    {Links.map((x) => (
-                        <div>
-                            <Link>{x.link === "SobreNosotros" ? "Sobre Nosotros" : x.link}</Link>
-                        </div>
-                    ))}
-                </ul>
+                NavbarOpen && (
+                    <ul>
+                        {Links.map((x) => (
+                            <div>
+                                <Link
+                                onClick={() => SetNavbarOpen(false)}
+                                to={x.link}
+                                smooth
+                                duration={500}
+                                className={styles.Navlink}
+                                >{x.link === "SobreNosotros" ? "Sobre Nosotros" : x.link}</Link>
+                            </div>
+                        ))}
+                        
+                    </ul>
+                )
             }
         </div>
     )
